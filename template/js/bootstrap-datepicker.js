@@ -1401,7 +1401,7 @@
         multidateSeparator: ',',
         orientation: "auto",
         rtl: false,
-        startDate: -Infinity,
+        startDate: 'today',
         startView: 0,
         todayBtn: false,
         todayHighlight: false,
