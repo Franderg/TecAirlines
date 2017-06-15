@@ -103,20 +103,26 @@
                             <h2>Buscar vuelos</h2>
                             <form>
                                 <div class="tabbable">
+                                    <ul class="nav nav-pills nav-sm nav-no-br mb10" id="flightChooseTab">
+                                        <li class="active"><a href="#flight-search-1" data-toggle="tab">Round Trip</a>
+                                        </li>
+                                        <li><a href="#flight-search-2" data-toggle="tab">One Way</a>
+                                        </li>
+                                    </ul>
                                     <div class="tab-content">
-                                        <div class="tab-pane fade in active" id="flight-search-2">
+                                        <div class="tab-pane fade in active" id="flight-search-1">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                <label>De</label>
+                                                                <label>From</label>
                                                                 <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                <label>Hacia</label>
+                                                                <label>To</label>
                                                                 <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
                                                             </div>
                                                         </div>
@@ -127,8 +133,108 @@
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                    <label>Salida</label>
+                                                                    <label>Departing</label>
+                                                                    <input class="form-control" name="start" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                    <label>Returning</label>
+                                                                    <input class="form-control" name="end" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group form-group-lg form-group-select-plus">
+                                                                    <label>Passngers</label>
+                                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                        <label class="btn btn-primary active">
+                                                                            <input type="radio" name="options" />1</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />2</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />3</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />3+</label>
+                                                                    </div>
+                                                                    <select class="form-control hidden">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option selected="selected">4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="flight-search-2">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                <label>From</label>
+                                                                <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                <label>To</label>
+                                                                <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-daterange" data-date-format="M d, D">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                    <label>Departing</label>
                                                                     <input class="date-pick form-control" data-date-format="M d, D" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group form-group-lg form-group-select-plus">
+                                                                    <label>Passngers</label>
+                                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                        <label class="btn btn-primary active">
+                                                                            <input type="radio" name="options" />1</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />2</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />3</label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input type="radio" name="options" />3+</label>
+                                                                    </div>
+                                                                    <select class="form-control hidden">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option selected="selected">4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -138,7 +244,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-lg" type="submit">Buscar</button>
+                                <button class="btn btn-primary btn-lg" type="submit">Search for Flights</button>
                             </form>
                         </div>
 					</div>
@@ -146,6 +252,61 @@
             </div>
             <div class="gap gap-small"></div>
         </div>
+        <div class="bg-holder">
+            <div class="bg-mask"></div>
+            <div class="bg-parallax" style="background-image:url(img/1280x853.png);"></div>
+            <div class="bg-content">
+                <div class="container">
+                    <div class="gap gap-big text-center text-white">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+ 
+            <div class="gap gap-small"></div>
+        </div>
+
+
+        <footer id="main-footer">
+            <div class="container">
+                <div class="row row-wrap">
+                    <div class="col-md-3">
+                        <a class="logo" href="index.html">
+                            <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+                        </a>
+                        <p class="mb20">Puedes seguirnos en nuestras redes sociales</p>
+                        <ul class="list list-horizontal list-space">
+                            <li>
+                                <a class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-twitter box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        
+
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="list list-footer">
+                            <li><a href="#">Acerca de</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>¿Tienes preguntas?</h4>
+                        <h4 class="text-color">+506 8888-8888</h4>
+                        <h4><a href="#" class="text-color">soporte@tec-airlines.com</a></h4>
+                        <p>Soporte 24/7</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
@@ -171,3 +332,5 @@
 </body>
 
 </html>
+
+		
