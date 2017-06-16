@@ -21,11 +21,26 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mystyles.css">
     <script src="js/modernizr.js"></script>
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	
+	<!--Script que carga datos de otros html  -->
+	<script type="text/javascript">
+		$(function (){
+			$(".header").load("header.html");
+			$(".footer").load("footer.html");
+			});
+	</script>
 
 </head>
 
 <body>
+	
+		<!-- header cargado de header.html -->
+	<div class="header">
+
+	</div>
+	
+		
 	<div class="container">
 		<h1>Crear promocion</h1>
 	</div>
@@ -66,6 +81,12 @@
 			</form>
 		</div>
 	</div>
+	
+		<div class="footer">
+		
+		</div>
+		
+		
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/slimmenu.js"></script>
