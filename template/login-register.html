@@ -78,7 +78,7 @@
                     <form>
 						<div class="form-group form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
 						   <label>Correo eléctronico</label>
-						      <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
+						      <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="email" />
                         </div>
                        <div class="form-group form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
                              <label>Contraseña</label>                             
@@ -97,13 +97,17 @@
                              <label>Nombre Completo</label>
                               <input class="form-control" placeholder="ejemplo Juan Pérez" type="text" />
                         </div>
+                        
                         <div class="form-group form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
                            <label>Correo electrónico</label>
-                            <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
+                            <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="email" />
                         </div>
                         <div class="form-group form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
                             <label>Contraseña</label>
-                            <input class="form-control" type="password" placeholder="La clave secreta de Juan" />
+                            <input class="form-control" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                name="pwd1" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+									if(this.checkValidity()) form.pwd2.pattern = this.value" placeholder="La clave secreta de Juan" 
+                                title="La contraseña no cumple con los requisitos mínimos"/>
                         </div>
                         <input class="btn btn-primary" type="submit" value="Registrarse en TEC-Airlines" />
                     </form>
