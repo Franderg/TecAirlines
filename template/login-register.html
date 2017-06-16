@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/mystyles.css">
     <script src="js/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="fb/main.js"></script>
 
 	<!--Script que carga datos de otros html  -->
 	<script type="text/javascript">
@@ -35,20 +36,31 @@
 
 <body>
 	
-    <!-- FACEBOOK WIDGET -->
-    <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- /FACEBOOK WIDGET -->
-    
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1297974300301703',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
     
     <div class="header">
     
@@ -88,6 +100,8 @@
                                 title="La contraseña no cumple con los requisitos mínimos"/>
                         </div>
                          <input class="btn btn-primary" type="submit" value="Ingresar" />
+			<label> <br> </label>   
+                         <input type=image src="https://eventos.hot-ticket.net/images/facebook-login-button.png" id="login" width="280" height="55">
                     </form>						
                 </div>
                 <div class="col-md-4">
