@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html class="full">
+<html>
 
 <head>
     <title>TEC-Airlines Ingreso/Registro</title>
@@ -21,12 +21,20 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mystyles.css">
     <script src="js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+	<!--Script que carga datos de otros html  -->
+	<script type="text/javascript">
+		$(function (){
+			$(".header").load("header.html");
+			$(".footer").load("footer.html");
+			});
+	</script>
 
 </head>
 
-<body class="full">
-
+<body>
+	
     <!-- FACEBOOK WIDGET -->
     <div id="fb-root"></div>
     <script>
@@ -35,78 +43,81 @@
             if (d.getElementById(id)) return;
             js = d.createElement(s);
             js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <!-- /FACEBOOK WIDGET -->
+    
+    
+    <div class="header">
+    
+    </div>
+    
     <div class="global-wrap">
+        <div class="container">
+            <h1 class="page-title">TEC-Airlines Ingreso/Registro</h1>
+        </div>
 
-        <div class="full-page">
-            <div class="bg-holder full">
-                <div class="bg-mask"></div>
-                <div class="bg-img" style="background-image:url(img/register.jpeg);"></div>
-                <div class="bg-holder-content full text-white">
-                    <a class="logo-holder" href="index.html">
-                        <img src="img/logo-white.png" alt="Image Alternative text" title="Image Title" />
-                    </a>
-                    <div class="full-center">
-                        <div class="container">
-                            <div class="row row-wrap" data-gutter="60">
-                                <div class="col-md-4">
-                                    <div class="visible-lg">
-                                        <h3 class="mb15">Bienvenido a <br> TEC-Airlines</h3>
-                                        <p>Nuestra aerolínea busca ser la número uno para los estudiantes que 
-                                        buscan una opción para viajar al extranjero.
-                                        Si eres estudiante puedes registrarte y disfrutar de todos los beneficios.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3 class="mb15">Login</h3>
-                                    <form>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
-                                            <label>Correo eléctronico</label>
-                                            <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
-                                        </div>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
-                                            <label>Contraseña</label>
-                                            <input class="form-control" type="password" placeholder="mi clave secreta" />
-                                        </div>
-                                        <input class="btn btn-primary" type="submit" value="Ingresar" />
-                                    </form>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3 class="mb15">Eres nuevo?</h3>
-                                    <form>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
-                                            <label>Nombre Completo</label>
-                                            <input class="form-control" placeholder="ejemplo Juan Pérez" type="text" />
-                                        </div>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
-                                            <label>Correo electrónico</label>
-                                            <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
-                                        </div>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
-                                            <label>Contraseña</label>
-                                            <input class="form-control" type="password" placeholder="La clave secreta de Juan" />
-                                        </div>
-                                        <input class="btn btn-primary" type="submit" value="Registrarse en TEC-Airlines" />
-                                    </form>
-                                </div>
-                            </div>
+        <div class="gap"></div>
+
+
+        <div class="container">
+            <div class="row" data-gutter="60">
+                <div class="col-md-4">
+                    <h3>Bienvenido a <br> TEC-Airlines</h3>
+                    <p>Nuestra aerolínea busca ser la número uno para los estudiantes que 
+                    buscan una opción para viajar al extranjero.
+                    Si eres estudiante puedes registrarte y disfrutar de todos los beneficios.</p>
+                </div>
+                               
+                <div class="col-md-4">
+                    <h3>Login</h3>
+                    <form>
+
+                    <form>
+						<div class="form-group form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+						   <label>Correo eléctronico</label>
+						      <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
                         </div>
-                    </div>
-                    <ul class="footer-links">
-                        <li><a href="#">About</a>
-                        </li>
-                        <li><a href="#">Help</a>
-                        </li>
-                    </ul>
+                       <div class="form-group form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                             <label>Contraseña</label>                             
+                                <input class="form-control" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                name="pwd1" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+									if(this.checkValidity()) form.pwd2.pattern = this.value" placeholder="mi clave secreta" 
+                                title="La contraseña no cumple con los requisitos mínimos"/>
+                        </div>
+                         <input class="btn btn-primary" type="submit" value="Ingresar" />
+                    </form>						
+                </div>
+                <div class="col-md-4">
+                    <h3>¿Eres nuevo?</h3>
+                    <form>
+                        <div class="form-group form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                             <label>Nombre Completo</label>
+                              <input class="form-control" placeholder="ejemplo Juan Pérez" type="text" />
+                        </div>
+                        <div class="form-group form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
+                           <label>Correo electrónico</label>
+                            <input class="form-control" placeholder="ejemplo usuario@tec-airlines.com" type="text" />
+                        </div>
+                        <div class="form-group form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                            <label>Contraseña</label>
+                            <input class="form-control" type="password" placeholder="La clave secreta de Juan" />
+                        </div>
+                        <input class="btn btn-primary" type="submit" value="Registrarse en TEC-Airlines" />
+                    </form>
                 </div>
             </div>
         </div>
 
 
+
+        <div class="gap"></div>
+        
+		<div class="footer">
+		
+		</div>
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
