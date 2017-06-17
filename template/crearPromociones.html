@@ -22,11 +22,11 @@
     <link rel="stylesheet" href="css/mystyles.css">
     <script src="js/modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<!--Script que carga datos de otros html  -->
 	<script type="text/javascript">
 		$(function (){
-			$(".header").load("header_admin.html");
+			$(".header").load("header.html");
 			$(".footer").load("footer.html");
 			});
 	</script>
@@ -34,59 +34,70 @@
 </head>
 
 <body>
-	
+
 		<!-- header cargado de header.html -->
 	<div class="header">
 
 	</div>
-	
-		
+
+
 	<div class="container">
 		<h1>Crear promocion</h1>
 	</div>
-	
+
 	<br>
-	
+
 	<div class="container">
-		<div class="row">
-			<form>
-				<div class="col-md-5">
-					<div class="thumb">
-						<a class="hover-img" href="#">
-							<img src="img/400x300.png" alt="Image Alternative text" title="the journey home" />
-						</a>
-					</div>
-					<br>
-					<a href="#" class="btn btn-primary mb20"><i class="fa fa-camera-retro" aria-hidden="true"></i>Agregar foto</a>
-				</div>
-				<div class="col-md-5 col-md-offset-1">
-					<div class="input-daterange" data-date-format="M d, D">			
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-							<label>Inicio</label>
-							<input class="date-pick form-control" data-date-format="M d, D" type="text" />
-						</div>			
-					</div>
-					<div class="input-daterange" data-date-format="M d, D">
-						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-							<label>Fin</label>
-							<input class="date-pick form-control" data-date-format="M d, D" type="text" />
-						</div>
-					</div>
-					<div class="form-group form-group-lg form-group-icon-left">
-						<label>Descripcion</label>
-						<input rows="5" class="form-control" id="inputEmail3" placeholder="Descripcion">
-					</div>
-					<a href="#" class="btn btn-primary mb20"><i class="fa fa-plus-circle"></i>Crear Promocion</a>
-				</div>
-			</form>
-		</div>
+    <div ng-app="putserviceApp" ng-controller="putserviceCtrl">
+  		<div class="row">
+  			<form>
+  				<div class="col-md-5">
+  					<div class="thumb">
+  						<a class="hover-img" href="#">
+  							<img src= "{{comparar}}" alt="Image Alternative text" title="the journey home" />
+  						</a>
+  					</div>
+  					<br>
+  					<a href="#" class="btn btn-primary mb20"><i class="fa fa-camera-retro" aria-hidden="true"></i>Agregar foto</a>
+  				</div>
+  				<div class="col-md-5 col-md-offset-1">
+  					<div class="input-daterange" data-date-format="M d, D">
+  						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+  							<label>Inicio</label>
+  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechInicio">
+  						</div>
+  					</div>
+
+            <div class="input-daterange" data-date-format="M d, D">
+  						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+  							<label>Fin</label>
+  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechFin">
+  						</div>
+  					</div>
+
+  					<div class="form-group form-group-lg form-group-icon-left">
+  						<label>Descripcion</label>
+  						<input class="form-control" id="inputEmail3" placeholder="Descripcion" ng-model="descripcion">
+  					</div>
+
+            <div class="form-group form-group-lg form-group-icon-left">
+  						<label>imagenUrl</label>
+  						<input class="form-control" id="inputEmail3" placeholder="url de la imagen" onkeypress="comparar()" ng-model="imageUrl">
+  					</div>
+  					<a href="#" class="btn btn-primary mb20" ng-click="putdata(fechInicio, fechFin, descripcion, imageUrl)"><i class="fa fa-plus-circle"></i>Crear Promocion</a>
+  				</div>
+  			</form>
+  		</div>
+    </div>
 	</div>
-	
+
 		<div class="footer">
-		
+
 		</div>
-		
-		
+
+
+  <script src="js/controladores/CrearPromociones.js"></script>
+
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/slimmenu.js"></script>
