@@ -6,15 +6,17 @@ app.controller('putserviceCtrl', function ($scope, $http) {
 	$scope.fechFin = null;
 	$scope.descripcion = null;
 	$scope.imageUrl = null;
-	$scope.imgDefault = "img/400x300.png";
+	$scope.imageUrlFinal  = "img/400x300.png";
 	$scope.lblMsg = null;
+  $scope.fun = null;
 
 	$scope.comparar = function (){
+		$scope.fun = "funciono";
 		if ($scope.imageUrl.localeCompare("") == 0) {
-			return "img/400x300.png";
+			 $scope.imageUrlFinal = "img/400x300.png";
 		} else {
-			return $scope.imageUrl;
-		};
+			$scope.imageUrlFinal = $scope.imageUrl;
+		}
 	};
 
 	$scope.putdata = function (fechInicio, fechFin, descripcion, imageUrl) {

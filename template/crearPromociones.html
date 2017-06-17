@@ -54,11 +54,10 @@
   				<div class="col-md-5">
   					<div class="thumb">
   						<a class="hover-img" href="#">
-  							<img src= "{{comparar}}" alt="Image Alternative text" title="the journey home" />
+  							<img src= "{{imageUrlFinal}}" alt="Image Alternative text" title="the journey home" />
   						</a>
   					</div>
   					<br>
-  					<a href="#" class="btn btn-primary mb20"><i class="fa fa-camera-retro" aria-hidden="true"></i>Agregar foto</a>
   				</div>
   				<div class="col-md-5 col-md-offset-1">
   					<div class="input-daterange" data-date-format="M d, D">
@@ -82,7 +81,7 @@
 
             <div class="form-group form-group-lg form-group-icon-left">
   						<label>imagenUrl</label>
-  						<input class="form-control" id="inputEmail3" placeholder="url de la imagen" onkeypress="comparar()" ng-model="imageUrl">
+  						<input class="form-control" id="inputEmail3" placeholder="url de la imagen" ng-change="comparar()" ng-model="imageUrl">
   					</div>
   					<a href="#" class="btn btn-primary mb20" ng-click="putdata(fechInicio, fechFin, descripcion, imageUrl)"><i class="fa fa-plus-circle"></i>Crear Promocion</a>
   				</div>
