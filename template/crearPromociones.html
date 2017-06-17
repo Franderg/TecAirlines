@@ -26,7 +26,7 @@
 	<!--Script que carga datos de otros html  -->
 	<script type="text/javascript">
 		$(function (){
-			$(".header").load("header.html");
+			$(".header").load("header_admin.html");
 			$(".footer").load("footer.html");
 			});
 	</script>
@@ -47,14 +47,6 @@
 
 	<br>
 
-<div ng-app="myApp" ng-controller="customersCtrl"> 
-	<ul>
-		<li ng-repeat="x in myData">
-			{{ x}}
-		</li>
-	</ul>
-</div>
-
 	<div class="container">
     <div ng-app="putserviceApp" ng-controller="putserviceCtrl">
   		<div class="row">
@@ -64,7 +56,6 @@
   						<a class="hover-img" href="#">
   							<img src= "{{imageUrlFinal}}" alt="Image Alternative text" title="the journey home" />
   						</a>
-						
   					</div>
   					<br>
   				</div>
@@ -72,13 +63,14 @@
   					<div class="input-daterange" data-date-format="M d, D">
   						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
   							<label>Inicio</label>
-  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechInicio">  							 
+  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechInicio">
   						</div>
   					</div>
-					<div class="input-daterange" data-date-format="M d, D">
+
+					<div class="input-daterange">
   						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
   							<label>Fin</label>
-  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechFin">
+  							<input class="date-pick form-control" data-date-format="M d, D" type="date" ng-model="fechFin" />  							
   						</div>
   					</div>
 
