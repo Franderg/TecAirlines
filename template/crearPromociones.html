@@ -26,7 +26,7 @@
 	<!--Script que carga datos de otros html  -->
 	<script type="text/javascript">
 		$(function (){
-			$(".header").load("header.html");
+			$(".header").load("header_admin.html");
 			$(".footer").load("footer.html");
 			});
 	</script>
@@ -67,10 +67,10 @@
   						</div>
   					</div>
 
-            <div class="input-daterange" data-date-format="M d, D">
+					<div class="input-daterange">
   						<div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
   							<label>Fin</label>
-  							<input type="date" class="form-control" placeholder="Text input" ng-model="fechFin">
+  							<input class="date-pick form-control" data-date-format="M d, D" type="date" ng-model="fechFin" />  							
   						</div>
   					</div>
 
